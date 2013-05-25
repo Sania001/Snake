@@ -15,7 +15,7 @@ void WipeHighScores() {
 	}
 }
 
-//загрузка рекордов из файла
+//Р·Р°РіСЂСѓР·РєР° СЂРµРєРѕСЂРґРѕРІ РёР· С„Р°Р№Р»Р°
 void LoadHighScores() {
 	FILE* f;
 	f = fopen("snake_highscores.dat", "r");
@@ -35,7 +35,7 @@ void LoadHighScores() {
 	}
 }
 
-//сохранение рекордов в файл
+//СЃРѕС…СЂР°РЅРµРЅРёРµ СЂРµРєРѕСЂРґРѕРІ РІ С„Р°Р№Р»
 void SaveHighScores() {
 	FILE* f;
 	f = fopen("snake_highscores.dat", "w");
@@ -77,7 +77,7 @@ void DrawHighScoresScreen() {
 	Color tcolor = getColor(0, 0, 0);
 	ImageFillScreen(mcolor);
 	
-	//прорисовка кнопок
+	//РїСЂРѕСЂРёСЃРѕРІРєР° РєРЅРѕРїРѕРє
 	DrawHSButton("Empty", 27, 15, 0);
 	DrawHSButton("Box", 227, 15, 1);
 	DrawHSButton("Labyrinth", 427, 15, 2);

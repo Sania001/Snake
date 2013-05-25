@@ -8,7 +8,7 @@ Color fieldColor;
 Color redField = getColor(120, 50, 50);
 Color greenField = getColor(50, 120, 50);
 
-//добавление текущих очков в таблицу рекордов
+//РґРѕР±Р°РІР»РµРЅРёРµ С‚РµРєСѓС‰РёС… РѕС‡РєРѕРІ РІ С‚Р°Р±Р»РёС†Сѓ СЂРµРєРѕСЂРґРѕРІ
 void InsertHSRecord() {
 	for (int i = 2; i > HSPos; i--) {
 		hsr[HSGamemode][HSDifficulty][i].points = hsr[HSGamemode][HSDifficulty][i - 1].points;
@@ -21,9 +21,9 @@ void InsertHSRecord() {
 	SaveHighScores();
 }
 
-//обработка результатов игры:
-//  если очков достаточно, то просим ввести имя для занесения в таблицу
-//  иначе отправляемся в главное меню
+//РѕР±СЂР°Р±РѕС‚РєР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РёРіСЂС‹:
+//  РµСЃР»Рё РѕС‡РєРѕРІ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ, С‚Рѕ РїСЂРѕСЃРёРј РІРІРµСЃС‚Рё РёРјСЏ РґР»СЏ Р·Р°РЅРµСЃРµРЅРёСЏ РІ С‚Р°Р±Р»РёС†Сѓ
+//  РёРЅР°С‡Рµ РѕС‚РїСЂР°РІР»СЏРµРјСЃСЏ РІ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ
 void HandleHighscoreUpdate(int difficulty, int gamemode, int points, int ticks) {
 	HSGamemode = gamemode;
 	HSDifficulty = difficulty;

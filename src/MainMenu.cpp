@@ -22,7 +22,7 @@ void DrawMainMenuScreen() {
 
 	ImageFillScreen(menucolor);
 
-	//Рисуем лого
+	//Р РёСЃСѓРµРј Р»РѕРіРѕ
 	char logo[5][50];
 	strcpy(logo[0], ".XXXXX.X...X.XX....X...X.XXXXX.");
 	strcpy(logo[1], ".X.....XX..X.X.X...X..X..X.....");
@@ -39,14 +39,14 @@ void DrawMainMenuScreen() {
 		}
 	}
 	ImageCopy(10, 5, 35, 11, 150 - 63, 100 - 5 * 15, 15);
-	//стираем следы
+	//СЃС‚РёСЂР°РµРј СЃР»РµРґС‹
 	ImageFilledRectangle(5, 5, 45, 20, menucolor);
 
-	//рисуем кнопочки
+	//СЂРёСЃСѓРµРј РєРЅРѕРїРѕС‡РєРё
 	DrawButton("Play", 180, 220, 0);
 	DrawButton("Highscore", 180, 290, 1);
 	DrawButton("Exit", 180, 360, 2);
-	//и снова стираем следы
+	//Рё СЃРЅРѕРІР° СЃС‚РёСЂР°РµРј СЃР»РµРґС‹
 	ImageFilledRectangle(5, 5, 140, 50, menucolor);
 }
 

@@ -78,7 +78,7 @@ void onSpecialKeyPressed(int key, int x, int y) {
 	printf("onSpecialKeyPressed: char = %c | %d\n", key, key);
 
 	if (glutGetModifiers() == GLUT_ACTIVE_ALT && key == GLUT_KEY_F4) {
-		//нажат alt+f4
+		//РЅР°Р¶Р°С‚ alt+f4
 		exit(0);
 	}
 

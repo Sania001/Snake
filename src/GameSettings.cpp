@@ -28,7 +28,7 @@ void DrawGameSettingsScreen() {
 	ImageCopy(10, 10, 150, 30, 148, 30, 3);
 	ImageFilledRectangle(5, 5, 140, 50, menucolor);
 
-	//рисуем надписи и кнопки
+	//СЂРёСЃСѓРµРј РЅР°РґРїРёСЃРё Рё РєРЅРѕРїРєРё
 	ImageText(27, 130, "Difficulty:", textcolor);
 	DrawButton("Easy", 27, 150, 0, 0);
 	DrawButton("Medium", 227, 150, 1, 0);
@@ -41,7 +41,7 @@ void DrawGameSettingsScreen() {
 
 	ImageText(170, 410, "Press <ENTER> to start the game", getColor(255, 255, 255));
 	ImageText(166, 430, "Press <ESC> to back to main menu", getColor(255, 255, 255));
-	//стираем за собой следы
+	//СЃС‚РёСЂР°РµРј Р·Р° СЃРѕР±РѕР№ СЃР»РµРґС‹
 	ImageFilledRectangle(5, 5, 140, 50, menucolor);
 }
 

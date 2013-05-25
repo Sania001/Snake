@@ -7,7 +7,7 @@ Color darkRunning = getColor(0, 200, 0);
 Color lightDied = getColor(255, 15, 15);
 Color darkDied = getColor(200, 0, 0);
 
-//прорисовка части тела (середины) змейки
+//РїСЂРѕСЂРёСЃРѕРІРєР° С‡Р°СЃС‚Рё С‚РµР»Р° (СЃРµСЂРµРґРёРЅС‹) Р·РјРµР№РєРё
 void RenderBodyCell(int x, int y, bool fat) {
 	Color bc, sbc;
 	if (isGameOver) {
@@ -29,7 +29,7 @@ void RenderBodyCell(int x, int y, bool fat) {
 	ImageFilledTriangle(bx + 10, by + 30, bx + 20, by + 30, bx + 10, by + 20, sbc);
 }
 
-//прорисовка головы змеи
+//РїСЂРѕСЂРёСЃРѕРІРєР° РіРѕР»РѕРІС‹ Р·РјРµРё
 void RenderHeadCell(int x, int y, int d, bool fat) {
 	Color bc, sbc;
 	if (isGameOver) {
@@ -77,7 +77,7 @@ void RenderHeadCell(int x, int y, int d, bool fat) {
 	ImageFilledRectangle(bx + 16, by + 16, bx + 24, by + 24, sbc);
 }
 
-//прорисовка хвоста змеи
+//РїСЂРѕСЂРёСЃРѕРІРєР° С…РІРѕСЃС‚Р° Р·РјРµРё
 void RenderTailCell(int x, int y, int d, bool fat) {
 	Color bc, sbc;
 	if (isGameOver) {
@@ -111,7 +111,7 @@ void RenderTailCell(int x, int y, int d, bool fat) {
 	}
 }
 
-//прорисовка яблока
+//РїСЂРѕСЂРёСЃРѕРІРєР° СЏР±Р»РѕРєР°
 void RenderAppleCell(int x, int y) {
 	int bx = 20 + x * CELL_HEIGHT;
 	int by = 20 + y * CELL_WIDTH;
@@ -120,7 +120,7 @@ void RenderAppleCell(int x, int y) {
 	ImageFilledCircle(bx + 20, by + 20, 13, getColor(255, 50, 50));
 }
 
-//прорисовка бонуса
+//РїСЂРѕСЂРёСЃРѕРІРєР° Р±РѕРЅСѓСЃР°
 void RenderBonusCell(int x, int y) {
 	int bx = 20 + x * CELL_HEIGHT;
 	int by = 20 + y * CELL_WIDTH;
@@ -135,9 +135,9 @@ void RenderBonusCell(int x, int y) {
 	ImageFilledTriangle(bx + 10, by + 35, bx + 30, by + 35, bx + 20, by + 25, orange);
 }
 
-//прорисовка игрового поля в целом
+//РїСЂРѕСЂРёСЃРѕРІРєР° РёРіСЂРѕРІРѕРіРѕ РїРѕР»СЏ РІ С†РµР»РѕРј
 void DrawGameScreen() {
-	//Рисуем сетку
+	//Р РёСЃСѓРµРј СЃРµС‚РєСѓ
 	for (int i = 1; i < GAME_COLS; i++) {
 		ImageDashedLine(20 + i * CELL_WIDTH, 20, 20 + i * CELL_WIDTH, 20 + CELL_HEIGHT * GAME_ROWS, getColor(170, 170, 170));
 	}
@@ -148,7 +148,7 @@ void DrawGameScreen() {
 	ImageRectangle(20, 20, 20 + CELL_WIDTH * GAME_COLS, 20 + CELL_HEIGHT * GAME_ROWS, getColor(0, 0, 0));
 	ImagePixel(20, 20, getColor(0, 0, 0));
 
-	//создание игровой статус-строки
+	//СЃРѕР·РґР°РЅРёРµ РёРіСЂРѕРІРѕР№ СЃС‚Р°С‚СѓСЃ-СЃС‚СЂРѕРєРё
 	char status[100];
 	int points = GamePoints + GameBonusPoints * BonusEffect;
 	if (isGameOver) {
@@ -169,7 +169,7 @@ void DrawGameScreen() {
 	} else {
 		sbc = darkRunning;
 	}
-	//прорисовка межсегментных переходов
+	//РїСЂРѕСЂРёСЃРѕРІРєР° РјРµР¶СЃРµРіРјРµРЅС‚РЅС‹С… РїРµСЂРµС…РѕРґРѕРІ
 	do {
 		nowCell = f;
 		f = f->next;
@@ -193,7 +193,7 @@ void DrawGameScreen() {
 					ImageFilledRectangle(baseX + 15, baseY + 25, baseX + 25, baseY - 40 + 15, sbc);
 					break;
 				}
-				//прорисовка межсегментных переходов "как бы" из-за границы экрана
+				//РїСЂРѕСЂРёСЃРѕРІРєР° РјРµР¶СЃРµРіРјРµРЅС‚РЅС‹С… РїРµСЂРµС…РѕРґРѕРІ "РєР°Рє Р±С‹" РёР·-Р·Р° РіСЂР°РЅРёС†С‹ СЌРєСЂР°РЅР°
 				if (nowCell->y == f->y) {
 					ImageFilledRectangle(20, baseY + 15, 20 + 25, baseY + 25, sbc);
 					ImageFilledRectangle(20 + GAME_COLS * CELL_WIDTH - 25, baseY + 15, 20 + GAME_COLS * CELL_WIDTH - 1, baseY + 25, sbc);
@@ -206,13 +206,13 @@ void DrawGameScreen() {
 			} while (false);
 		}
 	} while (f != NULL);
-	//прорисовка сегментов
+	//РїСЂРѕСЂРёСЃРѕРІРєР° СЃРµРіРјРµРЅС‚РѕРІ
 	f = Head;
 	do {
 		f = f->next;
 		if (f != NULL && f->visible) {
 			if (f->next == NULL || f->next->visible == false) {
-				//определяем, откуда "растут ноги" у хвоста
+				//РѕРїСЂРµРґРµР»СЏРµРј, РѕС‚РєСѓРґР° "СЂР°СЃС‚СѓС‚ РЅРѕРіРё" Сѓ С…РІРѕСЃС‚Р°
 				int dir = -1;
 				if (f->prev->x + 1 == f->x) {
 					dir = 1;
@@ -244,8 +244,8 @@ void DrawGameScreen() {
 		}
 	} while (f != NULL);
 
-	//прорисовка стен
-	int oh = 2; // - "радиус" стен
+	//РїСЂРѕСЂРёСЃРѕРІРєР° СЃС‚РµРЅ
+	int oh = 2; // - "СЂР°РґРёСѓСЃ" СЃС‚РµРЅ
 	Color oc = getColor(0, 0, 0);
 	for (int i = 0; i < GAME_ROWS; i++) {
 		for (int j = 0; j <= GAME_COLS; j++) {
@@ -274,7 +274,7 @@ void DrawGameScreen() {
 		}
 	}
 
-	//прорисовка бонуса, головы, яблока
+	//РїСЂРѕСЂРёСЃРѕРІРєР° Р±РѕРЅСѓСЃР°, РіРѕР»РѕРІС‹, СЏР±Р»РѕРєР°
 	RenderAppleCell(Apple.x, Apple.y);
 	if (Bonus.isActive) {
 		RenderBonusCell(Bonus.x, Bonus.y);
